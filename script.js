@@ -89,7 +89,7 @@ form.addEventListener("submit", async function (event) {
 
   if (
     !WEB3FORMS_ACCESS_KEY ||
-    WEB3FORMS_ACCESS_KEY === "COLLE_ICI_TA_NOUVELLE_CLE"
+    WEB3FORMS_ACCESS_KEY === "a00e1400-6647-4f0b-b76b-360ba454af37"
   ) {
     showStatus(
       "La configuration de l'envoi n'est pas terminée. Réessayez plus tard.",
