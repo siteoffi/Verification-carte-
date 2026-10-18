@@ -976,3 +976,15 @@ a:focus-visible {
     animation-duration: 0.01ms !important;
   }
 }
+.provider-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 9px;
+}
+
+.provider-icon {
+  overflow: hidden;
+  padding: 3px;
+  background: #ffffff;
+}
