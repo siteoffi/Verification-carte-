@@ -1,1 +1,133 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Envoyez une demande d'information concernant une carte cadeau ou un ticket de recharge.">
+  <title>CardCheck — Demande de vérification</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="./">
+      <span class="brand-icon">✓</span>
+      <span>CardCheck<span class="brand-dot">.</span></span>
+    </a>
+    <span class="secure-label">Demandes en ligne</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge">CARTE CADEAU · RECHARGE</div>
+      <h1>Comment pouvons-nous vous aider ?</h1>
+      <p>
+        Sélectionnez votre carte et envoyez-nous un message.
+        Pour vérifier votre solde ou la validité d'un ticket,
+        utilisez les services officiels du fournisseur.
+      </p>
+    </section>
+
+    <section class="form-card">
+      <div class="section-heading">
+        <span class="step">01</span>
+        <div>
+          <h2>Votre demande</h2>
+          <p>Remplissez les informations ci-dessous.</p>
+        </div>
+      </div>
+
+      <form id="requestForm">
+        <label for="provider">Type de carte ou ticket</label>
+        <select id="provider" name="Fournisseur" required>
+          <option value="">Choisir un fournisseur</option>
+          <option>PCS</option>
+          <option>Neosurf</option>
+          <option>Transcash</option>
+          <option>Steam</option>
+          <option>Nintendo</option>
+          <option>Google Play</option>
+          <option>Apple Gift Card</option>
+          <option>Autre</option>
+        </select>
+
+        <label for="name">Votre nom</label>
+        <input
+          id="name"
+          name="Nom"
+          type="text"
+          placeholder="Votre nom"
+          maxlength="100"
+          autocomplete="name"
+          required
+        >
+
+        <label for="email">Votre adresse e-mail</label>
+        <input
+          id="email"
+          name="Email du client"
+          type="email"
+          placeholder="vous@exemple.com"
+          maxlength="150"
+          autocomplete="email"
+          required
+        >
+
+        <label for="message">Votre message</label>
+        <textarea
+          id="message"
+          name="Message"
+          rows="5"
+          minlength="5"
+          maxlength="2000"
+          placeholder="Décrivez votre demande ici..."
+          required
+        ></textarea>
+
+        <p class="privacy-note">
+          🔒 N'indiquez jamais de code PIN, de code de recharge,
+          de mot de passe ou de numéro secret dans votre message.
+        </p>
+
+        <label class="consent">
+          <input type="checkbox" id="consent" required>
+          <span>J'accepte que mes informations soient utilisées
+          pour répondre à ma demande.</span>
+        </label>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Ne pas remplir ce champ</label>
+          <input id="website" name="botcheck" tabindex="-1"
+                 autocomplete="off">
+        </div>
+
+        <button type="submit" id="submitButton">
+          Envoyer ma demande <span aria-hidden="true">→</span>
+        </button>
+
+        <p id="formStatus" class="form-status" role="status"
+           aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="info-card">
+      <div class="info-icon">ⓘ</div>
+      <div>
+        <h2>Besoin de vérifier un solde ?</h2>
+        <p>
+          Ce formulaire transmet une demande par e-mail.
+          Il ne vérifie pas directement le solde ni l'authenticité
+          d'une carte. Consultez le site officiel du fournisseur.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>CardCheck · Formulaire de demande d'information</p>
+    <p>Ne partagez jamais vos codes secrets.</p>
+  </footer>
+</body>
+</html>
+
