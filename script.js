@@ -87,17 +87,6 @@ form.addEventListener("submit", async function (event) {
     return;
   }
 
-  if (
-    !WEB3FORMS_ACCESS_KEY ||
-    WEB3FORMS_ACCESS_KEY === "a00e1400-6647-4f0b-b76b-360ba454af37"
-  ) {
-    showStatus(
-      "La configuration de l'envoi n'est pas terminée. Réessayez plus tard.",
-      "error"
-    );
-    return;
-  }
-
   sending = true;
   submitButton.disabled = true;
   buttonText.textContent = "Envoi en cours…";
