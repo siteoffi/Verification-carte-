@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b2d5c">
+  <meta name="description" content="Envoyez une demande d'information concernant une carte cadeau ou un ticket de recharge.">
+  <title>CardCheck — Espace de demandes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="CardCheck, accueil">
+      <span class="brand-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3 20 6v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-3Z"
+            stroke="currentColor" stroke-width="1.8"/>
+          <path d="m8 12 2.5 2.5L16 9"
+            stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>CardCheck<span class="brand-dot">.</span></span>
+    </a>
+    <span class="topbar-label">
+      <span class="status-dot"></span>
+      Espace de demandes
+    </span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">
+          <span class="eyebrow-line"></span>
+          CARTES CADEAUX & RECHARGES
+        </span>
+
+        <h1>Votre demande,<br>
+          <span>en toute simplicité.</span>
+        </h1>
+
+        <p class="hero-description">
+          Sélectionnez votre fournisseur et transmettez votre demande
+          à notre équipe grâce à un formulaire simple et sécurisé.
+        </p>
+
+        <div class="hero-points">
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m5 12 4 4L19 6"/>
+            </svg>
+            Simple à utiliser
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m5 12 4 4L19 6"/>
+            </svg>
+            Adapté au mobile
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-glow"></div>
+        <div class="visual-card visual-card-back">
+          <span class="visual-card-mark">CC</span>
+          <span class="visual-lines"></span>
+        </div>
+        <div class="visual-card visual-card-front">
+          <div class="visual-card-top">
+            <span class="mini-shield">✓</span>
+            <span>CARDCHECK</span>
+          </div>
+          <div class="visual-card-center">
+            <span class="visual-circle circle-one"></span>
+            <span class="visual-circle circle-two"></span>
+          </div>
+          <div class="visual-card-bottom">
+            <span>DEMANDE D'INFORMATION</span>
+            <span class="visual-arrow">↗</span>
+          </div>
+        </div>
+        <div class="floating-check">✓</div>
+      </div>
+    </section>
+
+    <section class="provider-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">ÉTAPE 01</span>
+          <h2>Choisissez votre carte</h2>
+          <p>Sélectionnez le fournisseur concerné par votre demande.</p>
+        </div>
+        <span class="heading-number">01 / 02</span>
+      </div>
+
+      <div class="provider-grid" id="providerGrid">
+        <button type="button" class="provider-card" data-provider="PCS"
+          aria-pressed="false">
+          <span class="provider-icon icon-blue">P</span>
+          <span class="provider-name">PCS</span>
+          <span class="provider-subtitle">Carte prépayée</span>
+          <span class="provider-check">✓</span>
+        </button>
+
+        <button type="button" class="provider-card" data-provider="Neosurf"
+          aria-pressed="false">
+          <span class="provider-icon icon-purple">N</span>
+          <span class="provider-name">Neosurf</span>
+          <span class="provider-subtitle">Ticket prépayé</span>
+          <span class="provider-check">✓</span>
+        </button>
+
+        <button type="button" class="provider-card" data-provider="Transcash"
+          aria-pressed="false">
+          <span class="provider-icon icon-cyan">T</span>
+          <span class="provider-name">Transcash</span>
+          <span class="provider-subtitle">Carte prépayée</span>
+          <span class="provider-check">✓</span>
+        </button>
+
+        <button type="button" class="provider-card" data-provider="Steam"
+          aria-pressed="false">
+          <span class="provider-icon icon-dark">S</span>
+          <span class="provider-name">Steam</span>
+          <span class="provider-subtitle">Carte cadeau</span>
+          <span class="provider-check">✓</span>
+        </button>
+
+        <button type="button" class="provider-card" data-provider="Nintendo"
+          aria-pressed="false">
+          <span class="provider-icon icon-red">N</span>
+          <span class="provider-name">Nintendo</span>
+          <span class="provider-subtitle">Carte cadeau</span>
+          <span class="provider-check">✓</span>
+        </button>
+
+        <button type="button" class="provider-card" data-provider="Google Play"
+          aria-pressed="false">
+          <span class="provider-icon icon-green">G</span>
+          <span class="provider-name">Google Play</span>
+          <span class="provider-subtitle">Carte cadeau</span>
+          <span class="provider-check">✓</span>
+        </button>
+
+        <button type="button" class="provider-card" data-provider="Apple Gift Card"
+          aria-pressed="false">
+          <span class="provider-icon icon-apple">A</span>
+          <span class="provider-name">Apple Gift Card</span>
+          <span class="provider-subtitle">Carte cadeau</span>
+          <span class="provider-check">✓</span>
+        </button>
+
+        <button type="button" class="provider-card" data-provider="Autre"
+          aria-pressed="false">
+          <span class="provider-icon icon-other">＋</span>
+          <span class="provider-name">Autre</span>
+          <span class="provider-subtitle">Autre fournisseur</span>
+          <span class="provider-check">✓</span>
+        </button>
+      </div>
+      <p class="selection-hint" id="selectionHint">
+        Choisissez une carte pour continuer.
+      </p>
+    </section>
+
+    <section class="request-section" id="requestSection">
+      <div class="form-card">
+        <div class="form-heading">
+          <div class="form-heading-icon">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 5h16v14H4z" stroke="currentColor"
+                stroke-width="1.7" stroke-linejoin="round"/>
+              <path d="m5 7 7 6 7-6" stroke="currentColor"
+                stroke-width="1.7" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="section-kicker">ÉTAPE 02</span>
+            <h2>Envoyer une demande</h2>
+            <p>Expliquez-nous ce dont vous avez besoin.</p>
+          </div>
+        </div>
+
+        <div class="selected-provider" id="selectedProvider">
+          <span class="selected-provider-dot"></span>
+          Fournisseur sélectionné :
+          <strong id="selectedProviderName">Aucun</strong>
+        </div>
+
+        <form id="requestForm">
+          <input type="hidden" id="provider" name="Fournisseur" value="">
+
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Votre nom</label>
+              <input id="name" name="Nom" type="text"
+                placeholder="Entrez votre nom" maxlength="100"
+                autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Votre adresse e-mail</label>
+              <input id="email" name="Email du client" type="email"
+                placeholder="vous@exemple.com" maxlength="150"
+                autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="Message" rows="5"
+              minlength="5" maxlength="2000"
+              placeholder="Décrivez votre demande ici..." required></textarea>
+            <div class="field-footer">
+              <span>Ne partagez aucune information secrète.</span>
+              <span id="characterCount">0 / 2000</span>
+            </div>
+          </div>
+
+          <div class="privacy-box">
+            <span class="privacy-icon">i</span>
+            <p>
+              Pour votre sécurité, n'inscrivez aucun code PIN,
+              code de recharge, mot de passe ou numéro secret.
+              Ce formulaire ne vérifie pas directement le solde.
+            </p>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" required>
+            <span>
+              J'accepte que mes informations soient utilisées
+              pour répondre à ma demande.
+            </span>
+          </label>
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Ne pas remplir</label>
+            <input id="website" name="botcheck" tabindex="-1"
+              autocomplete="off">
+          </div>
+
+          <button type="submit" id="submitButton" class="submit-button">
+            <span id="buttonText">Envoyer ma demande</span>
+            <span class="submit-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <p id="formStatus" class="form-status" role="status"
+            aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="official-info">
+      <div class="official-icon">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor"
+            stroke-width="1.7"/>
+          <path d="M12 11v5m0-8h.01" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Besoin d'une vérification réelle ?</h3>
+        <p>
+          Consultez directement le site officiel de votre fournisseur
+          pour vérifier le solde ou la validité de votre carte.
+          CardCheck transmet uniquement votre message.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer-brand" href="./">CardCheck<span>.</span></a>
+    <p>Demandes d'information · Protégez vos données personnelles.</p>
+    <p class="footer-small">Ne communiquez jamais vos codes secrets.</p>
+  </footer>
+</body>
+</html>
