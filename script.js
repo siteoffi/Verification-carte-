@@ -3,7 +3,7 @@
 
 // Remplace cette valeur par ta clé Web3Forms.
 // Ne publie pas ta clé dans un dépôt public si tu peux l'éviter.
-const WEB3FORMS_ACCESS_KEY = "COLLE_ICI_TA_NOUVELLE_CLE";
+const WEB3FORMS_ACCESS_KEY = "a00e1400-6647-4f0b-b76b-360ba454af37";
 
 const form = document.getElementById("requestForm");
 const providerInput = document.getElementById("provider");
