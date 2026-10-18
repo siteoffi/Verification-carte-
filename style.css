@@ -1,0 +1,513 @@
+
+/* ========================================
+   VERIFICATION DE RECHARGE
+   Design responsive pour mobile et PC
+======================================== */
+
+:root {
+  --primary: #1746a2;
+  --primary-dark: #103579;
+  --accent: #16a085;
+  --background: #f3f6fb;
+  --surface: #ffffff;
+  --text: #172033;
+  --muted: #64748b;
+  --border: #dce4ef;
+  --shadow: 0 10px 35px rgba(25, 48, 90, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ========================================
+   EN-TETE
+======================================== */
+
+.header {
+  width: 100%;
+  background: var(--surface);
+  padding: 18px 6%;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(20, 40, 80, 0.04);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.logo span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: white;
+  background: var(--accent);
+  border-radius: 50%;
+  font-size: 23px;
+}
+
+/* ========================================
+   BANNIERE PRINCIPALE
+======================================== */
+
+.hero {
+  padding: 65px 20px 85px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #103579 0%,
+    #1746a2 55%,
+    #2877d4 100%
+  );
+}
+
+.hero-content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.hero h1 {
+  margin: 8px 0 14px;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #e8efff;
+  font-size: 16px;
+}
+
+/* ========================================
+   CONTENU PRINCIPAL
+======================================== */
+
+main {
+  width: min(100% - 32px, 1000px);
+  margin: -42px auto 60px;
+  position: relative;
+}
+
+/* ========================================
+   FORMULAIRE
+======================================== */
+
+.verification-card {
+  max-width: 720px;
+  margin: 0 auto 55px;
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.verification-card h2 {
+  margin: 0 0 5px;
+  text-align: center;
+  color: var(--primary-dark);
+  font-size: 27px;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ========================================
+   SELECTION DES CARTES
+======================================== */
+
+.providers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.provider {
+  min-width: 0;
+  min-height: 112px;
+  padding: 12px 6px;
+  color: var(--text);
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 13px;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.provider:hover {
+  border-color: #8aa9e8;
+  transform: translateY(-2px);
+}
+
+.provider.active {
+  background: #edf4ff;
+  border-color: var(--primary);
+  color: var(--primary-dark);
+  box-shadow: 0 0 0 2px rgba(23, 70, 162, 0.07);
+}
+
+.provider img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.provider strong {
+  display: block;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   CARTE SELECTIONNEE
+======================================== */
+
+.selected-provider {
+  margin: 15px 0 24px;
+  padding: 12px 14px;
+  background: #f1f6ff;
+  border-left: 4px solid var(--primary);
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.selected-provider strong {
+  color: var(--primary-dark);
+}
+
+/* ========================================
+   CHAMPS DU FORMULAIRE
+======================================== */
+
+.input-label {
+  display: block;
+  margin: 19px 0 8px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.verification-card input[type="number"],
+.verification-card textarea {
+  display: block;
+  width: 100%;
+  padding: 14px 15px;
+  color: var(--text);
+  background: #fbfcfe;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.verification-card input[type="number"] {
+  min-height: 50px;
+}
+
+.verification-card textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.verification-card input:focus,
+.verification-card textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 70, 162, 0.12);
+}
+
+.verification-card input::placeholder,
+.verification-card textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* ========================================
+   INFORMATION DE SECURITE
+======================================== */
+
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 18px 0 22px;
+  padding: 14px;
+  background: #fff8e7;
+  border: 1px solid #f3dfaa;
+  border-radius: 10px;
+}
+
+.notice span {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.notice p {
+  margin: 0;
+  color: #72551b;
+  font-size: 13px;
+}
+
+/* ========================================
+   BOUTON D'ENVOI
+======================================== */
+
+.verify-button {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 20px;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.verify-button:hover {
+  background: var(--primary-dark);
+}
+
+.verify-button:active {
+  transform: scale(0.99);
+}
+
+button:focus-visible {
+  outline: 3px solid #82aaff;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   ETAPES
+======================================== */
+
+.steps {
+  margin: 0 auto 55px;
+}
+
+.steps > h2,
+.reviews > h2 {
+  margin: 0 0 25px;
+  text-align: center;
+  color: var(--primary-dark);
+  font-size: 27px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.step {
+  padding: 25px 20px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: 0 5px 18px rgba(25, 48, 90, 0.04);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 13px;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.step h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ========================================
+   AVIS
+======================================== */
+
+.reviews {
+  margin-bottom: 45px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.review-card {
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(25, 48, 90, 0.04);
+}
+
+.stars {
+  margin-bottom: 10px;
+  color: #e5a100;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.review-card p {
+  color: #475569;
+  font-size: 14px;
+}
+
+.review-card strong {
+  color: var(--primary-dark);
+  font-size: 13px;
+}
+
+/* ========================================
+   PIED DE PAGE
+======================================== */
+
+footer {
+  padding: 28px 20px;
+  text-align: center;
+  color: #cbd5e1;
+  background: #12213a;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+/* ========================================
+   TABLETTES
+======================================== */
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 50px 18px 72px;
+  }
+
+  .verification-card {
+    padding: 24px 18px;
+  }
+
+  .providers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .provider {
+    min-height: 100px;
+  }
+
+  .steps-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps > h2,
+  .reviews > h2 {
+    font-size: 24px;
+  }
+}
+
+/* ========================================
+   PETITS ECRANS
+======================================== */
+
+@media (max-width: 380px) {
+  .header {
+    padding: 14px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .hero h1 {
+    font-size: 27px;
+  }
+
+  main {
+    width: calc(100% - 20px);
+  }
+
+  .verification-card {
+    padding: 20px 13px;
+  }
+
+  .provider strong {
+    font-size: 12px;
+  }
+}
